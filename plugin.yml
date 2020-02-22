@@ -1,0 +1,10 @@
+name: TestEconomySystem
+api: [3.0.0]
+version: 1.0.0
+main: API\MainZ
+author: DragoVN
+description: Plugin example for EconomySystem.
+commands:
+    test:
+        usage: "/test <args>"
+        default: true
