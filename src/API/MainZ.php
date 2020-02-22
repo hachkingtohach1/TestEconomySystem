@@ -33,7 +33,7 @@ class MainZ extends PluginBase implements Listener {
 		$api = $this->getServer()->getPluginManager()->getPlugin("EconomySystem");
 		if($cmd->getName() == "test"){
 			if(count($args) < 1){
-				$player->sendMessage("Usage : /test neweconomy|mycoins|addcoins|reducecoins|sendcoins");
+				$player->sendMessage("Usage : /test mycoins|addcoins|reducecoins|sendcoins");
 				return true;
 			}
 			switch ($args[0]){
@@ -68,15 +68,7 @@ class MainZ extends PluginBase implements Listener {
 					}
 					$api->reduceEconomyPlayer("coins", $player->getName(), $args[1], $args[2]);
                     $player->sendMessage("Deducted coins is $args[2] for $args[1]!");					
-				break;
-                case "neweconomy":
-				    if(!$player instanceof Player) break;
-					if(!isset($args[1])){
-						$player->sendMessage("Usage : /test neweconomy [name_economy]");
-						break;
-					}
-					$api->newEconomy($player, $args[1]);
-                break;				
+				break;			
 			}
 		}
 		return true;
